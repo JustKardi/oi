@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #ffd8f2, #9b65b2 60%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.title {
+    text-align: center;
+    color: #3f1e51;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    margin: 0 0 16px;
+    letter-spacing: 0.03em;
+}
+
+.container {
+    width: min(520px, 100%);
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 28px;
+    box-shadow: 0 24px 70px rgba(67, 18, 88, 0.16);
+    padding: 32px;
+    backdrop-filter: blur(10px);
+}
+
+.subtitle {
+    margin: 0 0 24px;
+    color: #6b3b71;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: 600;
+    color: #5a2d5c;
+}
+
+input[type='text'] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 2px solid rgba(91, 43, 90, 0.18);
+    /* background: #faf0ff; */
+    color: #3d1c4b;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type='text']:focus {
+    outline: none;
+    border-color: #9440b9;
+    box-shadow: 0 0 0 4px rgba(148, 64, 185, 0.12);
+}
+
+button {
+    width: 100%;
+    margin: 24px 0 12px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #8f5cd8, #ff7edc);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(149, 72, 202, 0.24);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.recommendation {
+    min-height: 72px;
+    margin-top: 12px;
+    padding: 18px 20px;
+    border-radius: 20px;
+    color: #4b1f5f;
+    line-height: 1.65;
+    font-size: 1rem;
+    white-space: pre-wrap;
+}
+
+.error {
+    background: #ffe3e8;
+    color: #8d2148;
+    border: 1px solid rgba(217, 77, 108, 0.28);
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding: 24px;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}
