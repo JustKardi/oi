@@ -7,33 +7,23 @@ const clothes = [
     { name: 'Shorts', minTemp: 28, maxTemp: 50, description: 'Wear lightweight clothes and stay cool.' }
 ];
 
-const temperatureInput = document.getElementById('temperature');
-const recommendationEl = document.getElementById('recommendation');
-const recommendBtn = document.getElementById('recommendBtn');
+const input = document.getElementById('temperature');
+const rec = document.getElementById('recommendation');
+const btn = document.getElementById('recommendBtn');
 
 function getClothingRecommendation(temperature) {
+    
     const matchedClothes = clothes.filter(item => temperature >= item.minTemp && temperature <= item.maxTemp);
-    if (matchedClothes.length === 0) {
-        return 'No matching clothing recommendations found for that temperature.';
-    }
 
-    return matchedClothes
-        .map(item => `${item.name}: ${item.description}`)
-        .join('\n');
+    return matchedClothes.map(item => `${item.name}: ${item.description}`).join('\n');
 }
 
 function showRecommendation() {
-    const tempValue = parseFloat(temperatureInput.value.trim());
+    const temp = parseFloat(input.value.trim());
 
-    if (Number.isNaN(tempValue)) {
-        recommendationEl.textContent = 'Please enter a valid numeric temperature.';
-        recommendationEl.className = 'error';
-        return;
-    }
-
-    const recommendation = getClothingRecommendation(tempValue);
-    recommendationEl.innerHTML = recommendation.replace(/\n/g, '<br>');
-    recommendationEl.className = 'result';
+    const recommendation = getClothingRecommendation(temp);
+    rec.innerHTML = recommendation.replace(/\n/g, '<br>');
+    rec.className = 'result';
 }
 
-recommendBtn.addEventListener('click', showRecommendation);
+btn.addEventListener('click', showRecommendation);
